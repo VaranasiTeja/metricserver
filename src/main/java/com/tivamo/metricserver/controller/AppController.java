@@ -13,24 +13,34 @@ public class AppController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody Model ping() {
-		return new Model("PONG");
+		return new Model("PONG", HttpStatus.OK.toString());
 	}
 }
 
 class Model {
-	private String msg;
+	private String payload;
+	private String status;
 
-	public Model(String msg) {
+	public Model(String payload, String status) {
 		super();
-		this.msg = msg;
+		this.payload = payload;
+		this.status = status;
 	}
 
-	public String getMsg() {
-		return msg;
+	public String getPayload() {
+		return payload;
 	}
 
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setPayload(String payload) {
+		this.payload = payload;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }
