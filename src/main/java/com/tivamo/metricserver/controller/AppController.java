@@ -11,18 +11,16 @@ public class AppController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody Model ping() {
-		return new Model("PONG", HttpStatus.OK.toString());
+		return new Model("PONG");
 	}
 }
 
 class Model {
 	private String value;
-	private String status;
 
-	public Model(String value, String status) {
+	public Model(String value) {
 		super();
 		this.value = value;
-		this.status = status;
 	}
 
 	public String getValue() {
@@ -31,14 +29,6 @@ class Model {
 
 	public void setValue(String value) {
 		this.value = value;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 }
