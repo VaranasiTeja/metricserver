@@ -1,8 +1,6 @@
 package com.tivamo.metricserver.controller;
 
-import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,21 +16,21 @@ public class AppController {
 }
 
 class Model {
-	private String payload;
+	private String value;
 	private String status;
 
-	public Model(String payload, String status) {
+	public Model(String value, String status) {
 		super();
-		this.payload = payload;
+		this.value = value;
 		this.status = status;
 	}
 
-	public String getPayload() {
-		return payload;
+	public String getValue() {
+		return value;
 	}
 
-	public void setPayload(String payload) {
-		this.payload = payload;
+	public void setValue(String value) {
+		this.value = value;
 	}
 
 	public String getStatus() {
